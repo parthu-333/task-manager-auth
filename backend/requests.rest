@@ -1,0 +1,33 @@
+//Create user
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "Sujatha",
+  "password": "123456"
+}
+###
+//Login User
+POST  http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username" : "Parthu",
+    "password" : "123456"
+}
+//Add todos into the user
+###
+POST  http://localhost:5000/api/todos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODYzMzYxYjZiZjhhNzYwMGJhNGI1ZCIsImlhdCI6MTc1MzYyNTQ0MSwiZXhwIjoxNzUzNzExODQxfQ.FVZ1EI2DLM8ETn9tDtc4K88N66JlvwDACgsG1Kttqkc
+
+{
+    "text" : "battalu uthakaaali"
+}
+
+###
+//get the all the todos
+GET http://localhost:5000/api/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODVkNzg2MjE2Nzg3YzU1OWFlNTI1OCIsImlhdCI6MTc1MzYwMTkyNiwiZXhwIjoxNzUzNjg4MzI2fQ.5TjsB_cLe4YvW8RfZlPuc6Qd7icLDpyt5gEfN5809Us
+###
+//delete todos
