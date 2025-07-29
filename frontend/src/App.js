@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import OpeningPage from './OpeningPage';
-import Login from './comoponents/Login';
-import Register from './comoponents/Register';
+import Login from './components/Login';
+import Register from './components/Register';
 import Dashboard from './pages/Dashboard';
 
 const App =() => {
