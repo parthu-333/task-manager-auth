@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../api';
+import './auth.css';
 
 const Register = () =>{
     const [username, setUsername] = useState("");
@@ -22,25 +23,27 @@ const Register = () =>{
     };
 
     return(
-        <div>
-            <h2>Register</h2>
-            <form onSubmit={handleRegister}>
-                <input
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange = {(e) => setUsername(e.target.value)}
-                    required
-                /><br/>
-                <input
-                    type="password"
-                    placeholder="password"
-                    value = {password}
-                    onChange = {(e) => setPassword(e.target.value)}
-                    required
-                /><br/>
-                <button type = "submit">Register</button>
-            </form>
+        <div className='opening-page'>
+            <div className='auth-page'>
+                <h2>Register</h2>
+                <form onSubmit={handleRegister}>
+                    <input
+                        type="text"
+                        placeholder="Username"
+                        value={username}
+                        onChange = {(e) => setUsername(e.target.value)}
+                        required
+                    /><br/>
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        value = {password}
+                        onChange = {(e) => setPassword(e.target.value)}
+                        required
+                    /><br/>
+                    <button type = "submit">Register</button>
+                </form>
+            </div>
         </div>
     );
 }

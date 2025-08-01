@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import API from '../api';
+import './dash.css';
 
 const DashBoard = () => {
     const [todos, setTodos] = useState([]);
@@ -59,35 +60,37 @@ const DashBoard = () => {
     };
 
     return (
-    <div>
-      <h2>Your ToDos</h2>
-      <form onSubmit={handleAddTodo}>
-        <input
-          type="text"
-          placeholder="New todo..."
-          value={newTodo}
-          onChange={(e) => setNewTodo(e.target.value)}
-        />
-        <button type="submit">Add</button>
-      </form>
+    <div className = 'dash-board'>
+      <div className = 'dash-content'>
+        <h2>Your ToDos</h2>
+        <form onSubmit={handleAddTodo}>
+          <input
+            type="text"
+            placeholder="New todo..."
+            value={newTodo}
+            onChange={(e) => setNewTodo(e.target.value)}
+          />
+          <button type="submit">Add</button>
+        </form>
 
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo._id}>
-            <input
-              type="checkbox"
-              checked={todo.completed}
-              onChange={() => handleToggle(todo._id, todo.completed)}
-            />
-            <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
-              {todo.text}
-            </span>
-            <button onClick={() => handleDelete(todo._id)}>❌</button>
-          </li>
-        ))}
-      </ul>
+        <ul>
+          {todos.map((todo) => (
+            <li key={todo._id}>
+              <input
+                type="checkbox"
+                checked={todo.completed}
+                onChange={() => handleToggle(todo._id, todo.completed)}
+              />
+              <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+                {todo.text}
+              </span>
+              <button onClick={() => handleDelete(todo._id)}>❌</button>
+            </li>
+          ))}
+        </ul>
 
-      <button onClick={handleLogout}>Logout</button>
+        <button className="logout-button" onClick={handleLogout}>Logout</button>
+      </div>
     </div>
   );
 };
