@@ -10,7 +10,7 @@ exports.register = async (req, res) => {
     try{
         const username = req.body.username;
         const password = req.body.password;
-
+        
         const exist = await User.findOne({username});
 
         if(exist) return res.status(400).json({msg : 'User already exists'});
